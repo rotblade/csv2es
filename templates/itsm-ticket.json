@@ -1,0 +1,99 @@
+{
+  "index_patterns": ["itsm-ticket*"],
+  "settings": {
+    "number_of_shards": 1
+  },
+  "mappings": {
+    "_doc": {
+      "_source": {
+        "enabled": false
+      },
+      "properties": {
+        "Status": {
+          "type": "keyword"
+        },
+        "Workgroup": {
+          "type": "keyword"
+        },
+        "Assginee": {
+          "type": "keyword"
+        },
+        "Category": {
+          "type": "keyword"
+        },
+        "SubCategory": {
+          "type": "keyword"
+        },
+        "Impact": {
+          "type": "keyword"
+        },
+        "Urgency": {
+          "type": "keyword"
+        },
+        "CustomerUPI": {
+          "type": "keyword"
+        },
+        "SLA status": {
+          "type": "keyword"
+        },
+        "Description": {
+          "type": "text",
+          "analyzer": "english",
+          "fields": {
+            "cn": {
+              "type": "text",
+              "analyzer": "ik_max_word",
+              "search_analyzer": "ik_max_word"
+            }
+          }
+        },
+        "Source": {
+          "type": "keyword"
+        },
+        "Building": {
+          "type": "keyword"
+        },
+        "Location": {
+          "type": "keyword"
+        },
+        "Create Time": {
+          "type": "date",
+          "format": "yyyy-MM-dd HH:mm:ss Z"
+        },
+        "Close Time": {
+          "type": "date",
+          "format": "yyyy-MM-dd HH:mm:ss Z"
+        },
+        "Cost Time": {
+          "type": "float"
+        },
+        "Open Duration": {
+          "type": "float"
+        },
+        "CreateByGroup": {
+          "type": "keyword"
+        },
+        "CreateBy": {
+          "type": "keyword"
+        },
+        "CloseByGroup": {
+          "type": "keyword"
+        },
+        "CloseBy": {
+          "type": "keyword"
+        },
+        "Resolution": {
+          "type": "text",
+          "analyzer": "english",
+          "fields": {
+            "cn": {
+              "type": "text",
+              "analyzer": "ik_max_word",
+              "search_analyzer": "ik_max_word"
+            }
+          }
+        }
+      }
+    }
+  }
+}
